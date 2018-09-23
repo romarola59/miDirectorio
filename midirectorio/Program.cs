@@ -1,12 +1,19 @@
 ﻿using System;
+using System.IO;
 
 namespace midirectorio
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
-            Console.WriteLine("Hello World!");
+            // hace una lista de los archivos del directorio c
+            String miDirectorio = @"c:\";   // crea la variable mi directorio
+            String[] listaFicheros;   // crea la variable listaFicheros 
+            listaFicheros = Directory.GetFiles(miDirectorio);
+            foreach(String fichero in listaFicheros)   // hace que los escriba de uno en uno por renglon
+            Console.WriteLine(fichero);
+            Console.ReadKey();
         }
     }
 }
